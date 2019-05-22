@@ -1,39 +1,39 @@
 # esx_society
-Society management for ESX. Adds employee management (hire, fire, promote / demote, change salary), society bank accounts and money washing. It's crucial that this script gets started before all resources that utilize societies do, or else many things will go wrong.
+Gerenciamento de sociedade para o ESX. Adiciona gerenciamento de funcionários (contratar, demitir, promover / rebaixar, alterar salário), contas bancárias da sociedade e lavagem de dinheiro. É crucial que esse script seja iniciado antes que todos os recursos que utilizam as sociedades o façam, ou então muitas coisas darão errado.
 
-## Requirements
-- [cron](https://github.com/ESX-Org/cron)
-- [esx_addonaccount](https://github.com/ESX-Org/esx_addonaccount)
+## Requisitos
+- [cron](https://github.com/ESX-Brasil/cron)
+- [esx_addonaccount](https://github.com/ESX-Brasil/esx_addonaccount)
 
-## Download & Installation
+## Download e Instalação
 
-### Using [fvm](https://github.com/qlaffont/fvm-installer)
+### Usando [fvm](https://github.com/qlaffont/fvm-installer)
 ```
-fvm install --save --folder=esx esx-org/esx_society
+fvm install --save --folder=esx ESX-Brasil/esx_society
 ```
 
-### Using Git
+### Usando o Git
 ```
 cd resources
-git clone https://github.com/ESX-Org/esx_society [esx]/esx_society
+git clone https://github.com/ESX-Brasil/esx_society [esx]/esx_society
 ```
 
-### Manually
-- Download https://github.com/ESX-Org/esx_society/archive/master.zip
-- Put it in the `[esx]` directory
+### Manualmente
+- Download https://github.com/ESX-Brasil/esx_society/archive/master.zip
+- Coloque no diretório `[esx]`
 
-## Installation
-- Import `esx_society.sql` in your database
-- Add this in your `server.cfg`:
+## Instalação
+- Importe `esx_society.sql` para seu banco de dados
+- Add isto em seu `server.cfg`:
 
 ```
 start esx_society
 ```
 
-## Explanation
-ESX Society works with addon accounts named 'society_xxx', for example 'society_taxi' or 'society_realestateagent'. If you job grade is 'boss' the society money will be displayed in your hud.
+## Explicação
+A ESX Society trabalha com contas de addon chamadas 'society_xxx', por exemplo 'society_taxi' ou 'society_realestateagent'. Se o seu grau de emprego for 'chefe', o dinheiro da sociedade será exibido no seu hud.
 
-## Usage
+## Uso
 ```lua
 local society = 'taxi'
 local amount  = 100
@@ -45,8 +45,12 @@ TriggerServerEvent('esx_society:washMoney', society, amount)
 
 TriggerEvent('esx_society:openBossMenu', society, function (data, menu)
 	menu.close()
-end, {wash = false}) -- set custom options, e.g disable washing
+end, {wash = false}) -- defina opções personalizadas, por exemplo, desativar a lavagem
 ```
+
+# Discord
+
+[![Join ESX Brasil](https://discordapp.com/api/guilds/432980396070666250/embed.png?style=banner2)](https://discord.gg/8zGbh3T)
 
 # Legal
 ### License
