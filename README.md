@@ -1,5 +1,6 @@
 # esx_society
-Gerenciamento de sociedade para o ESX. Adiciona gerenciamento de funcionários (contratar, demitir, promover / rebaixar, alterar salário), contas bancárias da sociedade e lavagem de dinheiro. É crucial que esse script seja iniciado antes que todos os recursos que utilizam as sociedades o façam, ou então muitas coisas darão errado.
+
+Gestão da sociedade para ESX. Adiciona gerenciamento de funcionários (contratar, demitir, promover / rebaixar, alterar salário), contas bancárias da sociedade e lavagem de dinheiro. É crucial que esse script seja iniciado antes que todos os recursos que utilizam as sociedades o façam; caso contrário, muitas coisas darão errado.
 
 ## Requisitos
 - [cron](https://github.com/ESX-Brasil/cron)
@@ -9,10 +10,10 @@ Gerenciamento de sociedade para o ESX. Adiciona gerenciamento de funcionários (
 
 ### Usando [fvm](https://github.com/qlaffont/fvm-installer)
 ```
-fvm install --save --folder=esx ESX-Brasil/esx_society
+fvm install --save --folder=esx esx-brasil/esx_society
 ```
 
-### Usando o Git
+### Usando Git
 ```
 cd resources
 git clone https://github.com/ESX-Brasil/esx_society [esx]/esx_society
@@ -23,17 +24,17 @@ git clone https://github.com/ESX-Brasil/esx_society [esx]/esx_society
 - Coloque no diretório `[esx]`
 
 ## Instalação
-- Importe `esx_society.sql` para seu banco de dados
-- Add isto em seu `server.cfg`:
+- Importe `esx_society.sql` no seu banco de dados
+- Adicione isso no seu `server.cfg`:
 
 ```
 start esx_society
 ```
 
 ## Explicação
-A ESX Society trabalha com contas de addon chamadas 'society_xxx', por exemplo 'society_taxi' ou 'society_realestateagent'. Se o seu grau de emprego for 'chefe', o dinheiro da sociedade será exibido no seu hud.
+A ESX Society trabalha com contas adicionais denominadas 'society_xxx', por exemplo 'society_taxi' ou 'society_realestateagent'. Se você classificar como chefe, o dinheiro da sociedade será exibido em seu hud.
 
-## Uso
+## Como usar
 ```lua
 local society = 'taxi'
 local amount  = 100
@@ -45,18 +46,18 @@ TriggerServerEvent('esx_society:washMoney', society, amount)
 
 TriggerEvent('esx_society:openBossMenu', society, function (data, menu)
 	menu.close()
-end, {wash = false}) -- defina opções personalizadas, por exemplo, desativar a lavagem
+end, {wash = false}) -- set custom options, e.g disable washing
 ```
 
 # Discord
 
-[![Join ESX Brasil](https://discordapp.com/api/guilds/432980396070666250/embed.png?style=banner2)](https://discord.gg/8zGbh3T)
+[![Join ESX Brasil](https://discordapp.com/api/guilds/693468263161659402/embed.png?style=banner2)](https://discord.gg/ZGXTsdN)
 
 # Legal
 ### License
 esx_society - societies for ESX
 
-Copyright (C) 2015-2018 Jérémie N'gadi
+Copyright (C) 2015-2020 ESXBrasil
 
 This program Is free software: you can redistribute it And/Or modify it under the terms Of the GNU General Public License As published by the Free Software Foundation, either version 3 Of the License, Or (at your option) any later version.
 
