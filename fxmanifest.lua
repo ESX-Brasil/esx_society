@@ -4,7 +4,7 @@ game 'gta5'
 
 description 'ESX Society'
 
-version '1.0.5'
+version '1.0.6'
 
 server_scripts {
 	'@mysql-async/lib/MySQL.lua',
